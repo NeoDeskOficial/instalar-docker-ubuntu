@@ -11,7 +11,7 @@
 ![Idioma](https://img.shields.io/badge/idioma-PT--BR-blue)
 
 📺 **Assista ao tutorial completo:** [LINK DO VÍDEO](https://youtube.com/)  
-🔔 **Canal:** [NOME DO CANAL](https://youtube.com/)
+🔔 **Canal:** [NeoDesk Informática]([https://youtube.com/](https://www.youtube.com/@NeoDesk-Oficial))
 
 </div>
 
