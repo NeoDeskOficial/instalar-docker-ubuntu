@@ -5,7 +5,7 @@
 **Instale o Docker e o Docker Compose em servidor Ubuntu com um único comando, ou siga o passo a passo manual completo em português.**
 
 ![Licença MIT](https://img.shields.io/badge/licença-MIT-green)
-![Ubuntu](https://img.shields.io/badge/Ubuntu-20.04%20|%2022.04%20|%2024.04-E95420?logo=ubuntu&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-20.04%20|%2022.04%20|%2024.04|%2026.04-E95420?logo=ubuntu&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-Engine-2496ED?logo=docker&logoColor=white)
 ![Compose](https://img.shields.io/badge/Docker%20Compose-v2.27.1-2496ED?logo=docker&logoColor=white)
 ![Idioma](https://img.shields.io/badge/idioma-PT--BR-blue)
