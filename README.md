@@ -1,47 +1,67 @@
-# Instalação do Docker e Docker Compose no Ubuntu
+<div align="center">
 
-Guia passo a passo para instalar o **Docker Engine** e o **Docker Compose (plugin v2)** em um servidor Ubuntu.
+# 🐳 Docker + Docker Compose no Ubuntu
 
-## Índice
+**Guia completo de instalação, do zero ao primeiro container.**
 
-1. [Pré-requisitos](#pré-requisitos)
-2. [Atualizar o sistema](#1-atualizar-o-sistema)
-3. [Instalar dependências](#2-instalar-dependências)
-4. [Adicionar o repositório oficial do Docker](#3-adicionar-o-repositório-oficial-do-docker)
-5. [Instalar o Docker](#4-instalar-o-docker)
-6. [Usar o Docker sem sudo](#5-usar-o-docker-sem-sudo)
-7. [Instalar o Docker Compose](#6-instalar-o-docker-compose)
-8. [Testando a instalação](#7-testando-a-instalação)
-9. [Solução de problemas](#solução-de-problemas)
+![Docker](https://img.shields.io/badge/Docker-Engine-2496ED?logo=docker&logoColor=white)
+![Compose](https://img.shields.io/badge/Docker%20Compose-v2.27.1-2496ED?logo=docker&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-20.04%20%7C%2022.04%20%7C%2024.04-E95420?logo=ubuntu&logoColor=white)
+![Licença](https://img.shields.io/badge/licença-MIT-green)
 
----
+📺 **Assista ao tutorial completo:** [LINK DO VÍDEO](https://youtube.com/)  
+🔔 **Canal:** [NOME DO CANAL](https://youtube.com/)
 
-## Pré-requisitos
-
-- Ubuntu (20.04, 22.04 ou superior)
-- Usuário com permissão `sudo`
-- Acesso à internet
-- Arquitetura x86_64 (para ARM, veja a observação no passo 6)
+</div>
 
 ---
 
-## 1. Atualizar o sistema
+## 📋 Sobre
+
+Este repositório reúne o passo a passo mostrado no canal para instalar o **Docker Engine** e o **Docker Compose (plugin v2)** em servidores Ubuntu, usando o repositório oficial do Docker.
+
+É a base para os próximos projetos do canal, como Pi-hole e outros serviços em containers.
+
+## 📑 Índice
+
+- [Requisitos](#-requisitos)
+- [Instalação](#-instalação)
+  - [1. Atualizar o sistema](#1-atualizar-o-sistema)
+  - [2. Instalar dependências](#2-instalar-dependências)
+  - [3. Adicionar o repositório oficial](#3-adicionar-o-repositório-oficial-do-docker)
+  - [4. Instalar o Docker Engine](#4-instalar-o-docker-engine)
+  - [5. Usar o Docker sem sudo](#5-usar-o-docker-sem-sudo)
+  - [6. Instalar o Docker Compose](#6-instalar-o-docker-compose)
+- [Verificação](#-verificação)
+- [Solução de problemas](#-solução-de-problemas)
+- [Referências](#-referências)
+- [Contribuindo](#-contribuindo)
+- [Licença](#-licença)
+
+## ✅ Requisitos
+
+| Item | Requisito |
+|---|---|
+| Sistema operacional | Ubuntu 20.04, 22.04 ou superior |
+| Arquitetura | x86_64 (ARM: veja a [observação](#6-instalar-o-docker-compose)) |
+| Permissões | Usuário com acesso `sudo` |
+| Rede | Conexão com a internet |
+
+## 🚀 Instalação
+
+### 1. Atualizar o sistema
 
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
 
----
-
-## 2. Instalar dependências
+### 2. Instalar dependências
 
 ```bash
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 ```
 
----
-
-## 3. Adicionar o repositório oficial do Docker
+### 3. Adicionar o repositório oficial do Docker
 
 Baixe e registre a chave GPG:
 
@@ -61,9 +81,7 @@ Atualize a lista de pacotes:
 sudo apt update
 ```
 
----
-
-## 4. Instalar o Docker
+### 4. Instalar o Docker Engine
 
 ```bash
 sudo apt install docker-ce
@@ -75,9 +93,7 @@ Confirme a versão instalada:
 docker --version
 ```
 
----
-
-## 5. Usar o Docker sem sudo
+### 5. Usar o Docker sem sudo
 
 Adicione seu usuário ao grupo `docker`:
 
@@ -85,68 +101,79 @@ Adicione seu usuário ao grupo `docker`:
 sudo usermod -aG docker ${USER}
 ```
 
-Aplique a mudança de grupo na sessão atual:
+Aplique a mudança na sessão atual:
 
 ```bash
 su - ${USER}
 ```
 
-> Se preferir, saia e entre novamente na sessão (logout/login).
+> 💡 Se preferir, encerre a sessão e entre novamente.
 
----
+### 6. Instalar o Docker Compose
 
-## 6. Instalar o Docker Compose
-
-Crie a pasta de plugins do Docker:
+Crie a pasta de plugins:
 
 ```bash
 mkdir -p ~/.docker/cli-plugins/
 ```
 
-Baixe o binário do Compose (v2.27.1):
+Baixe o binário (v2.27.1):
 
 ```bash
 curl -SL https://github.com/docker/compose/releases/download/v2.27.1/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
 ```
 
-Dê permissão de execução:
+Conceda permissão de execução:
 
 ```bash
 chmod +x ~/.docker/cli-plugins/docker-compose
 ```
 
-Confirme a instalação:
+> ⚠️ **ARM / Raspberry Pi:** substitua `docker-compose-linux-x86_64` por `docker-compose-linux-aarch64` no link de download.
+
+## 🔍 Verificação
+
+Confira as versões:
 
 ```bash
+docker --version
 docker compose version
 ```
 
-> **Observação (ARM / Raspberry Pi):** troque `docker-compose-linux-x86_64` por `docker-compose-linux-aarch64` no link de download.
-
----
-
-## 7. Testando a instalação
+Teste com o container de exemplo:
 
 ```bash
 docker run hello-world
 ```
 
-Se aparecer a mensagem "Hello from Docker!", está tudo funcionando.
+Se aparecer a mensagem **"Hello from Docker!"**, a instalação foi concluída com sucesso. ✅
 
----
+## 🛠️ Solução de problemas
 
-## Solução de problemas
+| Sintoma | Causa provável | Solução |
+|---|---|---|
+| `permission denied` ao rodar `docker` | Usuário fora do grupo `docker` | Refaça o [passo 5](#5-usar-o-docker-sem-sudo) e reinicie a sessão |
+| `docker: command not found` | Instalação não concluída | Repita o [passo 4](#4-instalar-o-docker-engine) e verifique erros |
+| `docker compose` não reconhecido | Plugin ausente ou sem permissão | Confira se existe `~/.docker/cli-plugins/docker-compose` e se está executável |
+| Erro de chave GPG no `apt update` | Chave não registrada | Repita o [passo 3](#3-adicionar-o-repositório-oficial-do-docker) |
 
-| Problema | Solução |
-|---|---|
-| `permission denied` ao rodar `docker` | Refaça o passo 5 e faça logout/login |
-| `docker: command not found` | Verifique se o passo 4 terminou sem erros |
-| `docker compose` não é reconhecido | Confira se o arquivo está em `~/.docker/cli-plugins/docker-compose` e tem permissão de execução |
-| Erro de chave GPG no `apt update` | Repita o passo 3 e confira o caminho `/usr/share/keyrings/docker-archive-keyring.gpg` |
+## 📚 Referências
 
----
-
-## Referências
-
-- [Documentação oficial do Docker](https://docs.docker.com/engine/install/ubuntu/)
+- [Instalação do Docker Engine no Ubuntu (documentação oficial)](https://docs.docker.com/engine/install/ubuntu/)
 - [Releases do Docker Compose](https://github.com/docker/compose/releases)
+
+## 🤝 Contribuindo
+
+Encontrou um erro ou tem uma sugestão? Abra uma [issue](../../issues) ou envie um pull request.
+
+## 📄 Licença
+
+Distribuído sob a licença MIT.
+
+---
+
+<div align="center">
+
+Gostou do conteúdo? Deixe seu 👍 no vídeo e **inscreva-se no canal**!
+
+</div>
