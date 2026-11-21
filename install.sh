@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #
 # Instalador do Docker Engine + Docker Compose (plugin v2) para Ubuntu Server
-# Repositório: https://github.com/NeoDeskOfocial/docker-ubuntu-ptbr
+# Repositório: https://github.com/NeoDeskOficial/instalar-docker-ubuntu
 # Licença: MIT
 #
 # Uso:
-#   curl -fsSL https://raw.githubusercontent.com/NeoDeskOfocial/docker-ubuntu-ptbr/main/install.sh | sudo bash
+#   curl -fsSL https://raw.githubusercontent.com/NeoDeskOficial/instalar-docker-ubuntu/main/install.sh | sudo bash
 #   sudo bash install.sh --ajuda
 
 set -Eeuo pipefail
