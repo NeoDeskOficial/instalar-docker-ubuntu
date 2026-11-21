@@ -5,13 +5,13 @@
 **Instale o Docker e o Docker Compose em servidor Ubuntu com um único comando, ou siga o passo a passo manual completo em português.**
 
 ![Licença MIT](https://img.shields.io/badge/licença-MIT-green)
-![Ubuntu](https://img.shields.io/badge/Ubuntu-20.04%20|%2022.04%20|%2024.04|%2026.04-E95420?logo=ubuntu&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-20.04%20|%2022.04%20|%2024.04-E95420?logo=ubuntu&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-Engine-2496ED?logo=docker&logoColor=white)
 ![Compose](https://img.shields.io/badge/Docker%20Compose-v2.27.1-2496ED?logo=docker&logoColor=white)
 ![Idioma](https://img.shields.io/badge/idioma-PT--BR-blue)
 
 📺 **Assista ao tutorial completo:** [LINK DO VÍDEO](https://youtube.com/)  
-🔔 **Canal:** [NeoDesk Informática](https://youtube.com/@NeoDesk-Oficial)
+🔔 **Canal:** [NOME DO CANAL](https://youtube.com/)
 
 </div>
 
@@ -63,7 +63,7 @@ Este repositório reúne:
 Basta colar o comando abaixo, que já atualiza o servidor e instala tudo. Em um servidor Ubuntu, execute:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/NeoDeskOfocial/docker-ubuntu-ptbr/main/install.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/NeoDeskOficial/instalar-docker-ubuntu/main/install.sh | sudo bash
 ```
 
 O script faz algumas perguntas durante a instalação (por exemplo, se deve adicionar seu usuário ao grupo `docker`). Por isso, execute o comando em um terminal interativo, como uma sessão SSH.
@@ -73,7 +73,7 @@ O script faz algumas perguntas durante a instalação (por exemplo, se deve adic
 Executar scripts baixados da internet exige confiança na origem. Se quiser ler o código antes:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/NeoDeskOfocial/docker-ubuntu-ptbr/main/install.sh -o install.sh
+curl -fsSL https://raw.githubusercontent.com/NeoDeskOficial/instalar-docker-ubuntu/main/install.sh -o install.sh
 less install.sh
 sudo bash install.sh
 ```
@@ -102,7 +102,7 @@ O script encerra com mensagem clara se algo estiver errado.
 Passe opções com `bash -s --`:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/NeoDeskOfocial/docker-ubuntu-ptbr/main/install.sh | sudo bash -s -- --sem-upgrade
+curl -fsSL https://raw.githubusercontent.com/NeoDeskOficial/instalar-docker-ubuntu/main/install.sh | sudo bash -s -- --sem-upgrade
 ```
 
 | Opção | Efeito |
@@ -273,7 +273,7 @@ sudo apt update && sudo apt upgrade -y
 **Docker Compose:** rode o instalador novamente informando a versão desejada, ou, no método manual, repita o [passo 6](#6-instalar-o-docker-compose) trocando o número da versão. As versões estão em [github.com/docker/compose/releases](https://github.com/docker/compose/releases).
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/NeoDeskOfocial/docker-ubuntu-ptbr/main/install.sh | sudo bash -s -- --versao-compose=v2.27.1 --sem-upgrade --sim
+curl -fsSL https://raw.githubusercontent.com/NeoDeskOficial/instalar-docker-ubuntu/main/install.sh | sudo bash -s -- --versao-compose=v2.27.1 --sem-upgrade --sim
 ```
 
 ---
